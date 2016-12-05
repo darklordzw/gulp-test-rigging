@@ -1,11 +1,29 @@
 {
   "name": "gulp-test-rigging",
-  "version": "0.0.0",
-  "description": "GulpTestRigging",
-  "main": "app.js",
+  "version": "0.0.1",
+  "description": "Defines a set of Gulp tasks for running unit tests, code-coverage reports, and linting.",
+  "main": "gulp-test-rigging.js",
   "author": {
-    "name": "bwhatley"
+    "name": "Ben Whatley"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darklordzw/gulp-test-rigging.git"
+  },
+  "keywords": [
+    "gulp",
+    "mocha",
+    "xo",
+    "test"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/darklordzw/gulp-test-rigging/issues"
+  },
+  "homepage": "https://github.com/darklordzw/gulp-test-rigging#readme",
+  "files": [
+    "gulp-test-rigging.js"
+  ],
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-istanbul": "^1.1.1",
@@ -18,7 +36,6 @@
     "xo": "^0.17.1"
   },
   "xo": {
-    "space": 4,
     "envs": [
       "node",
       "mocha"
