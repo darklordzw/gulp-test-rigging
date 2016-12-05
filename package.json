@@ -1,0 +1,36 @@
+{
+  "name": "gulp-test-rigging",
+  "version": "0.0.0",
+  "description": "GulpTestRigging",
+  "main": "app.js",
+  "author": {
+    "name": "bwhatley"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-istanbul": "^1.1.1",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-mocha": "^3.0.1",
+    "gulp-xo": "^0.14.0",
+    "lodash.defaults": "^4.2.0",
+    "mkdirp": "^0.5.1",
+    "mocha-jenkins-reporter": "^0.3.1",
+    "xo": "^0.17.1"
+  },
+  "xo": {
+    "space": 4,
+    "envs": [
+      "node",
+      "mocha"
+    ],
+    "rules": {
+      "linebreak-style": "off",
+      "unicode-bom": "off",
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "import/no-unresolved": "off"
+    }
+  }
+}
