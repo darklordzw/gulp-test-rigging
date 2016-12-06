@@ -72,14 +72,14 @@ module.exports = function (gulp, config) {
     gulp.task('run-tests', (cb) => {
         process.env.NODE_ENV = 'test';
         gulp.src(config.paths.src)
-            .pipe(plugins.istanbul()) // Covering files
-            .pipe(plugins.istanbul.hookRequire()) // Force `require` to return covered files
+            .pipe(plugins.istanbul())
+            .pipe(plugins.istanbul.hookRequire())
             .on('finish', function () {
                 gulp.src(config.paths.test)
                     .pipe(plugins.mocha())
                     .pipe(plugins.istanbul.writeReports({
                         reporters: ['text', 'text-summary']
-                    })) // Creating the reports after tests ran
+                    }))
                     .on('end', cb);
             });
     });
@@ -93,8 +93,8 @@ module.exports = function (gulp, config) {
     gulp.task('run-tests-jenkins', (cb) => {
         process.env.NODE_ENV = 'test';
         gulp.src(config.paths.src)
-            .pipe(plugins.istanbul()) // Covering files
-            .pipe(plugins.istanbul.hookRequire()) // Force `require` to return covered files
+            .pipe(plugins.istanbul())
+            .pipe(plugins.istanbul.hookRequire())
             .on('finish', function () {
                 gulp.src(config.paths.test)
                     .pipe(plugins.mocha({
@@ -105,7 +105,7 @@ module.exports = function (gulp, config) {
                     }))
                     .pipe(plugins.istanbul.writeReports({
                         reporters: config.coverageOutputFormat
-                    })) // Creating the reports after tests ran
+                    }))
                     .on('end', cb);
             });
     });
