@@ -9,10 +9,7 @@ module.exports = function (gulp, config) {
     config = config || {};
     defaults(config,
         {
-            paths: {
-                src: ['app.js'],
-                test: ['test/**/*spec.js', 'test/**/*test.js']
-            }
+            paths: {}
         },
         {lintReporter: 'checkstyle'},
         {lintOutputDir: './lint-results'},
@@ -22,6 +19,9 @@ module.exports = function (gulp, config) {
         {coverageReporter: 'mocha-jenkins-reporter'},
         {coverageOutputFormat: ['cobertura']}
     );
+
+    config.paths.src = config.paths.src || ['app.js'];
+    config.paths.test = config.paths.test || ['test/**/*spec.js', 'test/**/*test.js'];
 
     /**
      * Runs run-lint linter on source code

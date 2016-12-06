@@ -219,6 +219,7 @@ typings/
 .vs/
 obj/
 *.njsproj
+*.sln
 
 # Misc.
 lint-results/

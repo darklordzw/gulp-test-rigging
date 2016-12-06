@@ -22,8 +22,12 @@
   },
   "homepage": "https://github.com/darklordzw/gulp-test-rigging#readme",
   "files": [
-    "gulp-test-rigging.js"
+    "gulp-test-rigging.js",
+    "postinstall.js"
   ],
+  "scripts": {
+    "postinstall": "node ./postinstall.js"
+  },
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-istanbul": "^1.1.1",
