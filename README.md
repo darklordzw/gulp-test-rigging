@@ -14,7 +14,7 @@ To use the module, simply require it in your gulpfile.js after "gulp" and pass "
 
 ```js
 var gulp = require('gulp');
-require('./gulp-test-rigging')(gulp);
+require('gulp-test-rigging')(gulp);
 
 gulp.task('default', ['validate']);
 ```
