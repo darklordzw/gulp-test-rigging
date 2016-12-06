@@ -4,7 +4,7 @@
 
 Simple Node.js library to simplify generating reports on unit tests, code-coverage, and code styling locally and in files consumable by [Jenkins][5]. Uses [mocha][1], [istanbul][2], and [xo][3].
 
-## Install
+## Install 
 
 ```sh
 npm install --save gulp-test-rigging
