@@ -44,10 +44,6 @@ module.exports = function (gulp, config) {
         var params = [].concat(config.paths.src, config.paths.test, ['--reporter=' + config.lintReporter])
             .join(' ');
         exec('xo ' + params, function (err, stdout) {
-            if (err) {
-                return console.error(err);
-            }
-
             // Make sure the output directory exists.
             mkdirp(config.lintOutputDir, function (err) {
                 if (err) {
