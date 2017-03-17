@@ -31,12 +31,12 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-istanbul": "^1.1.1",
-    "gulp-load-plugins": "^1.4.0",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-mocha": "^3.0.1",
     "gulp-xo": "^0.14.0",
     "lodash.defaults": "^4.2.0",
     "mkdirp": "^0.5.1",
-    "mocha-jenkins-reporter": "^0.3.1",
+    "mocha-jenkins-reporter": "^0.3.7",
     "xo": "^0.17.1"
   },
   "xo": {
@@ -51,7 +51,11 @@
         "error",
         "always"
       ],
-      "import/no-unresolved": "off"
-    }
+      "import/no-unresolved": "off",
+      "object-curly-spacing": [
+        "error",
+        "always"
+      ]
+	}
   }
 }
