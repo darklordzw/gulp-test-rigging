@@ -76,7 +76,10 @@ module.exports = function (gulp, config) {
                     .pipe(plugins.istanbul.writeReports({
                         reporters: ['text', 'text-summary']
                     }))
-                    .on('end', cb);
+                    .on('end', () => {
+						cb();
+						process.exit();
+					});
             });
     });
 
@@ -102,7 +105,10 @@ module.exports = function (gulp, config) {
                     .pipe(plugins.istanbul.writeReports({
                         reporters: config.coverageOutputFormat
                     }))
-                    .on('end', cb);
+                    .on('end', () => {
+						cb();
+						process.exit();
+					});
             });
     });
 
