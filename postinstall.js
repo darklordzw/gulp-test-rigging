@@ -14,7 +14,11 @@ file.xo = {
             'error',
             'always'
         ],
-        'import/no-unresolved': 'off'
+        'import/no-unresolved': 'off',
+		'object-curly-spacing': [
+			'error',
+			'always'
+		]
     }
 };
 
