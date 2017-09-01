@@ -28,7 +28,9 @@ This adds the following tasks to your gulpfile:
 * run-tests-jenkins - Runs mocha and istanbul, outputting the results for each to files.
 * validate - Runs both "run-lint" and "run-tests".
 * validate-jenkins - Runs both "run-lint-jenkins" and "run-tests-jenkins".
-* watch - Runs "validate" as a Gulp watch task.
+* watch-lint - Runs "run-lint" as a Gulp watch task.
+* watch-tests - Runs "run-tests" as a Gulp watch task.
+* watch-validate - Runs "validate" as a Gulp watch task.
 
 ## Options
 Options may be passed to the module following the "gulp" parameter in the require statement. The following lists the available options and their default values:
