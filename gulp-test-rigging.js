@@ -43,11 +43,7 @@ module.exports = function (gulp, config) {
 	gulp.task('run-lint-jenkins', () => {
 		const params = [].concat(config.paths.src, config.paths.test, ['--reporter=' + config.lintReporter])
 			.join(' ');
-		exec('xo ' + params, (err, stdout) => {
-			if (err) {
-				return console.error(err);
-			}
-
+		exec('xo ' + params, (err, stdout) => { // eslint-disable-line handle-callback-err
 			// Make sure the output directory exists.
 			mkdirp(config.lintOutputDir, (err) => {
 				if (err) {
