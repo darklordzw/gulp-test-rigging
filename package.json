@@ -1,6 +1,6 @@
 {
   "name": "gulp-test-rigging",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Defines a set of Gulp tasks for running unit tests, code-coverage reports, and linting.",
   "main": "gulp-test-rigging.js",
   "author": {
