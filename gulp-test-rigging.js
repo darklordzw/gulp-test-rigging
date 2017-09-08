@@ -22,6 +22,7 @@ module.exports = function (gulp, config) {
 
 	config.paths.src = config.paths.src || ['app.js'];
 	config.paths.test = config.paths.test || ['test/**/*spec.js', 'test/**/*test.js'];
+	config.paths.lint = [].concat(config.paths.src, config.paths.test);
 
 	/**
 	 * Runs run-lint linter on source code
@@ -30,8 +31,10 @@ module.exports = function (gulp, config) {
 	 * `gulp run-lint`
 	 */
 	gulp.task('run-lint', () =>
-		gulp.src([].concat(config.paths.src, config.paths.test))
+		gulp.src(config.paths.lint)
 			.pipe(plugins.xo())
+			.pipe(plugins.xo.format())
+			.pipe(plugins.xo.failAfterError())
 	);
 
 	/**
@@ -41,7 +44,7 @@ module.exports = function (gulp, config) {
 	 * `gulp run-lint-jenkins`
 	 */
 	gulp.task('run-lint-jenkins', () => {
-		const params = [].concat(config.paths.src, config.paths.test, ['--reporter=' + config.lintReporter])
+		const params = [].concat(config.paths.lint, ['--reporter=' + config.lintReporter])
 			.join(' ');
 		exec('xo ' + params, (err, stdout) => { // eslint-disable-line handle-callback-err
 			// Make sure the output directory exists.
@@ -132,7 +135,7 @@ module.exports = function (gulp, config) {
 	 *
 	 * `gulp watch`
 	 */
-	gulp.task('watch-lint', () => gulp.watch(config.paths.src, ['run-lint']));
+	gulp.task('watch-lint', () => gulp.watch(config.paths.lint, ['run-lint']));
 
 	/**
 	 * Watches sources and runs linter on
@@ -148,5 +151,5 @@ module.exports = function (gulp, config) {
 	 *
 	 * `gulp watch`
 	 */
-	gulp.task('watch-validate', () => gulp.watch(config.paths.src, ['run-validate']));
+	gulp.task('watch-validate', () => gulp.watch(config.paths.lint, ['run-validate']));
 };
